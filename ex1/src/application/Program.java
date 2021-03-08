@@ -41,7 +41,7 @@ public class Program {
 			double hourValue = sc.nextDouble();
 			System.out.print("Duration (hours): ");
 			Integer hour = sc.nextInt();
-
+//teste
 			HourContract contract = new HourContract(contractDate, hourValue, hour);
 
 			worker.addContract(contract);
