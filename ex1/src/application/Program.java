@@ -30,7 +30,7 @@ public class Program {
 
 		Worker worker = new Worker(name, WorkerLevel.valueOf(level), baseSalary, new Department(departmentName));
 
-		System.out.print("How many contracts to	 this worker: ");
+		System.out.print("How many contracts to this worker: ");
 		int n = sc.nextInt();
 
 		for (int i = 1; i < n; i++) {
@@ -40,16 +40,21 @@ public class Program {
 			System.out.print("value per hour:");
 			double hourValue = sc.nextDouble();
 			System.out.print("Duration (hours): ");
-			int hour = sc.nextInt();
+			Integer hour = sc.nextInt();
 
 			HourContract contract = new HourContract(contractDate, hourValue, hour);
 
 			worker.addContract(contract);
 
 		}
-		
-		System.out.println("Enter month and year to calculate income (MM/YYYY):" );
-		String monthAndYear=sc.nextLine();
+
+		System.out.println("Enter month and year to calculate income (MM/YYYY):");
+		String monthAndYear = sc.nextLine();
+		int year = Integer.parseInt(monthAndYear.substring(0, 2));
+		int month = Integer.parseInt(monthAndYear.substring(3));
+		System.out.println("Name:  " + worker.getName());
+		System.out.println("Department: " + worker.getDepartment().getName());
+		System.out.println("Incom for: " + worker.income(year, month));
 
 		sc.close();
 	}
